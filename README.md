@@ -53,3 +53,12 @@ This script will load the trajectory data, apply the zone logic from lanes.py, a
 Output:
 
 traffic_analysis_report2.xlsx: An Excel file with the final counts of vehicles per lane and direction.
+
+******Important Notes and Limitations
+This project serves as a successful proof-of-concept, but has several key limitations:
+
+Partial Analysis: Due to the computationally intensive nature of DeepSORT on high-resolution (4K) video, the included trajectories.pkl data was generated from a short clip (1-2 minutes) of the full 15-minute video. The counts in the report do not reflect the full video.
+
+Tracking Accuracy: DeepSORT, while robust for larger objects, struggled to accurately track small, dense two-wheelers. The model often lost track of these vehicles, especially when they were occluded or in tight groups.
+
+Model Constraints: The best.pt model was trained with limitations. A more powerful GPU would allow for training on a larger, more diverse dataset at a higher resolution, which would significantly improve detection accuracy, especially for smaller objects.**********
